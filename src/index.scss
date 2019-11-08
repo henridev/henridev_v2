@@ -1,0 +1,196 @@
+// Definition of variables
+$one: #000000;
+$two: #002f06;
+$three: #1c6000;
+$four: #27a102;
+$five: #1fea00;
+$six: #fefefe;
+
+$khaki: #f6eb5e;
+$purple: #5f0957;
+$paleviolet: #cd39a6;
+$midnightblue: #090512;
+$midnightpurple: #661895;
+$darkgrey: #111;
+
+$yellow: #fac508;
+
+// importing all pages and content
+@import url("https://fonts.googleapis.com/css?family=Be+Vietnam|Roboto&display=swap");
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+@import "./page_styling/home.scss";
+@import "./page_styling/about.scss";
+@import "./page_styling/portfolio.scss";
+@import "./page_styling/scrollbar.scss";
+@import "./page_styling/contact.scss";
+@import "./page_styling/home-grid.scss";
+@import "./page_styling/skills-grid.scss";
+
+// ----------------------------------------
+// To install Boostrap:
+// 1) Run in the client folder: $ npm i bootstrap
+// 2) Import bootstrap with the following line
+// @import '../node_modules/bootstrap/scss/bootstrap.scss';
+//
+// To install Reactstrap:
+// 1) Run in the client folder: $ npm i reactstrap
+// 2) Go to the official documentation and take some examples: https://reactstrap.github.io/
+// import { Button } from 'reactstrap';
+// <Button color="danger">Danger!</Button>
+// ----------------------------------------
+// --------------------
+// Style reusable for all components
+
+// html {
+// }
+
+body {
+  overflow-x: hidden;
+}
+
+// class to set navbar background
+.bg-black {
+  background-color: #000000;
+}
+
+bootstrap-link,
+.navlink {
+  color: $six;
+  margin: 0 2%;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 1s ease-out;
+}
+
+.navlink:hover,
+bootstrap-link:hover,
+.navlink:focus,
+bootstrap-link:focus {
+  text-decoration: none;
+  color: $khaki;
+  text-shadow: 2px 2px 20px $khaki;
+}
+
+.linkedin_logo,
+.github_logo {
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 20px;
+  filter: grayscale(1);
+  filter: brightness(100);
+  transition: all 1s ease-out;
+}
+
+.linkedin_logo:hover,
+.github_logo:hover {
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 20px;
+  box-shadow: 0px 0px 30px 0px $four;
+}
+
+.logo_links {
+  align-items: center;
+}
+
+@media (max-width: 1500px) {
+  html {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 1024px) {
+  html {
+    font-size: 10px;
+  }
+  #contact {
+    display: block;
+  }
+  .hide_small_badge {
+    display: inline;
+    max-width: 70%;
+  }
+  .hide_large_badge {
+    display: none;
+  }
+}
+
+@media (max-width: 500px) {
+  html {
+    font-size: 10px;
+  }
+  .hide_small_badge {
+    display: none;
+  }
+  .technologies_span {
+    display: none;
+  }
+
+  .learn_more_title {
+    font-size: 1.7rem;
+  }
+  .learn_more_item {
+    font-size: 1.4rem;
+  }
+  i.fas {
+    width: 3rem;
+    height: 3rem;
+  }
+  .scrollbar {
+    margin-top: 5%;
+    right: 10%;
+    z-index: 10;
+  }
+  .home {
+    padding-top: 5vh;
+  }
+  .web_wrapper_grid {
+    display: grid;
+    grid-template-areas:
+      "logo logo logo logo logo logo"
+      "proj proj proj proj proj proj"
+      ". arrowback arrowback arrowforward arrowforward .";
+    grid-template-rows: 0.5fr 1fr 0.5fr;
+    grid-template-columns: repeat(6, 1fr);
+    margin-top: 0;
+  }
+  .portfolio_grid_wrapper {
+    margin-right: 17%;
+  }
+  .contact_page {
+    overflow: hidden;
+    background-color: #111;
+    padding-left: 0;
+    padding-right: 18vw;
+    padding-top: 0vh;
+  }
+  .portfolio_grid_wrapper {
+    display: block;
+    grid-template-rows: none;
+  }
+  .one_education {
+    width: 20%;
+  }
+  .one_education.ironhack {
+    width: 15%;
+  }
+  .send-button,
+  .button {
+    width: 200px;
+  }
+  .form-horizontal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .fa-2x {
+    font-size: 1.5rem;
+  }
+  .contact-text {
+    margin-left: 5vw !important;
+  }
+  .section-header {
+    margin-bottom: 0px;
+  }
+}

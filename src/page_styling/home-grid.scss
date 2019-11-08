@@ -1,0 +1,145 @@
+.home {
+  display: grid;
+  grid-template-areas:
+    'intro intro intro .'
+    'description links links .'
+    'information information information .'
+    'navigate navigate navigate .';
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 0.5fr 0.5fr 4fr 1.5fr;
+  color: white;
+  width: 100vw;
+  height: 100vh;
+  background-color: $darkgrey;
+  font-family: 'Roboto Condensed', sans-serif;
+  padding-left: 4%;
+  align-items: center;
+}
+
+// blinking intro text
+
+.grid-intro {
+  grid-area: intro;
+  text-shadow: 0 0 7px #c8c8c8;
+  font-size: 3rem;
+  align-self: flex-end;
+}
+
+.lineOne {
+  position: relative;
+  padding-right: 0.5%;
+}
+
+.lineOne::after {
+  content: '';
+  position: absolute;
+  width: 1px;
+  height: 3rem;
+  right: 0;
+  top: 1px;
+  border-right: 2px solid white;
+  -webkit-animation: blink 0.5s infinite ease;
+  animation: blink 0.5s infinite ease;
+}
+
+.grid-intro::selection {
+  text-shadow: none;
+}
+
+// section with links and short description
+
+.grid-description {
+  grid-area: description;
+  color: $yellow;
+  text-shadow: 0 0 2px #faef18d1;
+  font-size: 2rem;
+}
+
+.grid-links {
+  grid-area: links;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+}
+
+.top_linkd,
+.top_git {
+  font-size: 2rem;
+  color: $yellow;
+  padding: 5px;
+}
+
+// section with all the information
+
+.grid-information {
+  grid-area: information;
+  align-self: flex-start;
+}
+
+.information {
+  display: flex;
+  flex-direction: column;
+  padding-top: 5%;
+  position: relative;
+}
+
+.specifics_text {
+  margin-top: 1%;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.logos {
+  margin-top: 3%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+// section with all the different links
+.grid-navigate {
+  grid-area: navigate;
+  align-self: flex-start;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: #e2b621;
+  margin-top: 2%;
+}
+
+.learn_more {
+  list-style-type: none;
+  text-shadow: 0 0 1px #c8c8c8;
+  padding: 0;
+  transition: all 1s ease-out;
+}
+
+.learn_more_item {
+  font-size: 2rem;
+  z-index: 99;
+}
+
+@media (max-width: 500px) {
+  .one_year {
+    display: none;
+  }
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes highlight {
+  0% {
+  }
+  100% {
+    -webkit-filter: drop-shadow(0px 0px 10px white);
+    filter: drop-shadow(0px 0px 10px white);
+  }
+}

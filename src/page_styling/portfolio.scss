@@ -1,0 +1,169 @@
+.portfolio-wrapper::before {
+  content: '';
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.portfolio-wrapper {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background-color: $darkgrey;
+}
+
+.project::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 340px;
+  height: 560px;
+  border: 1px solid $one;
+  content: '';
+  z-index: 100;
+}
+
+.project_image {
+  background-size: contain;
+  background-repeat: no-repeat;
+  grid-area: image;
+}
+
+.project_description {
+  grid-area: description;
+}
+
+.title_number {
+  grid-area: title;
+  font: 1.3rem Inconsolata, monospace;
+}
+
+.project_description {
+  color: white !important;
+}
+
+.project_technologies {
+  grid-area: technology;
+  color: $four;
+}
+
+.particle_wrapper2 {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+}
+
+// css grid
+
+.portfolio_grid_wrapper {
+  display: grid;
+  height: 90vh;
+  width: 80vw;
+  margin-right: 10%;
+  grid-template-rows: 5% 90%;
+  z-index: 10;
+  margin-top: 35vh;
+}
+
+.toggle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99;
+}
+
+.web_wrapper_grid {
+  display: grid;
+  grid-template-areas:
+    '. . logo logo . .'
+    'arrowback proj proj proj proj arrowforward';
+  grid-template-rows: 1fr 8fr;
+  grid-template-columns: repeat(6, 1fr);
+}
+
+.grid_project {
+  text-align: center;
+}
+
+.project_logo {
+  grid-area: logo;
+  width: 100%;
+}
+
+.project_img_wrapper {
+  align-self: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-position-y: center;
+  background-position-x: center;
+  margin: 0;
+  justify-self: center;
+  padding-top: 20%;
+  filter: grayscale(1);
+}
+
+.project_screens {
+  grid-area: proj;
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  align-self: center;
+}
+
+.project_logo_img {
+  filter: brightness(100);
+}
+
+.project_logo:hover {
+  cursor: pointer;
+}
+
+.arrowforward {
+  grid-area: arrowforward;
+  transform: rotate(315deg);
+}
+.arrowback {
+  transform: rotate(135deg);
+  grid-area: arrowback;
+}
+
+.arrowforward,
+.arrowback {
+  justify-self: center;
+  align-self: center;
+  box-sizing: border-box;
+  height: 3vw;
+  width: 3vw;
+  border-style: solid;
+  border-color: white;
+  border-width: 0px 1px 1px 0px;
+  transition: border-width 150ms ease-in-out;
+}
+
+.arrowback:hover,
+.arrowforward:hover {
+  border-bottom-width: 4px;
+  border-right-width: 4px;
+  cursor: pointer;
+}
+
+.mockupscreen {
+  width: 90%;
+}
+
+.project_screens > a {
+  color: $yellow;
+  // text-decoration: none;
+  font-weight: bold;
+}

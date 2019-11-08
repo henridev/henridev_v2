@@ -36,7 +36,7 @@ export default function Contact() {
       <section id="contact">
         <h1 class="section-header">CONTACT</h1>
         <div class="contact-wrapper">
-          <form class="form-horizontal" role="form">
+          <form className="form-horizontal" role="form">
             <div class="form-group">
               <div class="col-sm-12">
                 <input

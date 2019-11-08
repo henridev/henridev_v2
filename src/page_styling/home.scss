@@ -1,0 +1,152 @@
+// insert a psuedo element after
+// position it absolute over whole element
+// for repeating linear gradient
+// it means repeat every pixel go from bottom to top
+// black for one pixel then transparent for one pixel
+
+.learn_more_title {
+  font-weight: bold;
+}
+
+.learn_more_item:hover {
+  text-shadow: 2px 2px 3px #c8c8c8;
+  color: black;
+  cursor: pointer;
+}
+
+.links,
+.information,
+.learn_more {
+  z-index: 10;
+  position: relative;
+}
+
+.years {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-weight: bold;
+  position: relative;
+  padding-bottom: 2%;
+}
+
+.years::after {
+  content: '';
+  position: absolute;
+  /* left: 0; */
+  bottom: 0;
+  border-bottom: 2px solid $yellow;
+  width: 100%;
+}
+
+.one_year {
+  display: flex;
+  flex-direction: column;
+}
+
+.one_education {
+  padding-bottom: 1%;
+  width: 10%;
+  height: 10%;
+  cursor: pointer;
+  transition: all 1s linear;
+}
+
+.one_education.ironhack {
+  width: 5%;
+  height: 5%;
+}
+
+.one_education.baruch {
+  width: 12%;
+  height: 12%;
+}
+
+.one_education:hover,
+.one_education:focus {
+  // animation: highlight 1s linear;
+  -webkit-filter: drop-shadow(5px 5px 10px white);
+  filter: drop-shadow(5px 5px 10px white);
+}
+
+.particle_wrapper {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+}
+
+.codewars {
+  margin-left: 2%;
+  filter: brightness(1.2);
+}
+
+.technology_image {
+  width: 70px;
+  height: 70px;
+}
+
+.technology_wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 3%;
+}
+
+.specifics > * > h2 {
+  color: $yellow;
+}
+
+.experience_link {
+  color: $yellow;
+}
+.experience_link:hover {
+  color: $yellow;
+}
+
+.active_uni#ironhack,
+.active_uni#jedha,
+.active_uni#ghent1,
+.active_uni#ghent2,
+.active_uni#baruch {
+  border-bottom: 2px solid $yellow;
+  border-start-start-radius: 2px;
+  border-end-start-radius: 2px;
+}
+
+.hide_small_badge {
+  display: none;
+}
+
+.hide_large_badge {
+}
+
+.experience-short {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.experience-paragraph {
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+
+.experience-title {
+  font-weight: bold;
+}
+
+.jumbotron {
+  padding: 2%;
+}
+
+.experience_logo {
+  width: 20%;
+}
+
+.inYellow {
+  color: $yellow;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+}
