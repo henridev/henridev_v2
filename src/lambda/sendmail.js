@@ -1,65 +1,40 @@
 const nodemailer = require("nodemailer");
+// const path = require("path");
+// require("dotenv").config({ path: path.join(__dirname, ".env") });
 
 exports.handler = function(event, context, callback) {
-  let transporter = nodemailer.createTransport({
+  const smtpTransport = nodemailer.createTransport({
+    service: "gmail",
     host: "smtp.gmail.com",
-    port: 465,
-    secure: true,
     auth: {
-      type: "OAuth2",
-      user: process.env.MAIL_LOGIN,
-      clientId: process.env.CLIENT_ID,
-      clientSecret: process.env.CLIENT_SECRET,
-      refreshToken: process.env.REFRESH_TOKEN,
-      accessToken: process.env.ACCESS_TOKEN
+      user: "henri160797@gmail.com",
+      pass: "77N47123"
     }
   });
+
+  const mailOptions = {
+    from: "xx_sender",
+    to: "henri.dbel@gmail.com",
+    subject: `personal site mail from ${"xx_name"}.`,
+    text: "xx_content"
+  };
   console.log(event.body);
 
-  transporter.sendMail(
-    {
-      from: process.env.MAIL_LOGIN,
-      to: process.env.MAIL_TO,
-      subject: process.env.SUBJECT + new Date().toLocaleString(),
-      text: event.body
-    },
-    function(error, info) {
-      if (error) {
-        callback(error);
-      } else {
-        callback(null, {
-          statusCode: 200,
-          body: "Ok"
-        });
-      }
-    }
-  );
+  smtpTransport
+    .sendMail(mailOptions)
+    .then(res => {
+      callback(null, {
+        statusCode: 200,
+        body: "Ok"
+      });
+      console.log("message sent", res);
+    })
+    .catch(err => {
+      callback(err);
+      console.log("error while sending message", err);
+    });
 };
 
 // router.post("/", (req, res, next) => {
-//   console.log("body of mail request", req.body);
-//   const { sender, content, name } = req.body;
-//   const smtpTransport = nodemailer.createTransport({
-//     service: "gmail",
-//     host: "smtp.gmail.com",
-//     auth: {
-//       user: process.env.GMAIL,
-//       pass: process.env.GPAS
-//     }
-//   });
-//   const mailOptions = {
-//     from: sender,
-//     to: process.env.GMAILRECEIVE,
-//     subject: `personal site mail from ${name}.`,
-//     text: content
-//   };
-//   smtpTransport
-//     .sendMail(mailOptions)
-//     .then(res => {
-//       console.log("message sent", res);
-//     })
-//     .catch(err => {
-//       console.log("error while sending message", err);
-//     });
-//   res.json({ msg: "mail has been sent", sender: sender });
+
 // });
