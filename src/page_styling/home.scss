@@ -31,7 +31,7 @@
 }
 
 .years::after {
-  content: '';
+  content: "";
   position: absolute;
   /* left: 0; */
   bottom: 0;
@@ -149,4 +149,12 @@
 .card-body {
   display: flex;
   flex-direction: column;
+}
+
+.project-btn {
+  color: #f3bf08;
+  background-color: transparent;
+  border: 1px solid white;
+  border-radius: 5%;
+  margin-left: 1%;
 }

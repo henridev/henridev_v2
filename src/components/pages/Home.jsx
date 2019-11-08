@@ -1,78 +1,78 @@
-import React from 'react'
-import { useState, useEffect } from 'react'
-import Education from '../sub-components/Education'
-import Experience from '../sub-components/Experience'
-import Skills from '../sub-components/Skills'
-import particlesOptions from '../../assets/particlesjs_portfolio.json'
-import Particles from 'react-particles-js'
+import React from "react";
+import { useState, useEffect } from "react";
+import Education from "../sub-components/Education";
+import Experience from "../sub-components/Experience";
+import Skills from "../sub-components/Skills";
+import particlesOptions from "../../assets/particlesjs_portfolio.json";
+import Particles from "react-particles-js";
 
 export default function Home() {
-  let cleanTyping = false
-  let count = 0
-  let currentTextIndex = 0
+  let cleanTyping = false;
+  let count = 0;
+  let currentTextIndex = 0;
 
-  const [clickedSection, setClickedSection] = useState('education')
-  const [line, setLine] = useState('')
+  const [clickedSection, setClickedSection] = useState("education");
+  const [line, setLine] = useState("");
   const [texts, setTexts] = useState([
-    'Hello there henri here',
-    'welcome to my site!',
-  ])
+    "Hello there henri here",
+    "welcome to my site!"
+  ]);
   useEffect(() => {
-    let index = 0
-    typing(texts[currentTextIndex], index)
+    let index = 0;
+    typing(texts[currentTextIndex], index);
     return () => {
-      cleanTyping = true
-    }
-  }, [])
+      cleanTyping = true;
+    };
+  }, []);
   function typing(text, index) {
-    count++
-    if (cleanTyping) return
-    let letter = text.slice(0, index)
-    index++
-    setLine(letter)
+    count++;
+    if (cleanTyping) return;
+    let letter = text.slice(0, index);
+    index++;
+    setLine(letter);
     if (text.length === index - 1) {
-      let end = text.length
-      if (count > 30) return
+      let end = text.length;
+      if (count > 30) return;
       setTimeout(() => {
-        reverseTyping(end, text)
-      }, 500)
-      return
+        reverseTyping(end, text);
+      }, 500);
+      return;
     }
     setTimeout(() => {
-      typing(text, index++)
-    }, 150)
+      typing(text, index++);
+    }, 150);
   }
   function reverseTyping(end, text) {
-    let letter = text.slice(0, end)
-    end--
-    setLine(letter)
+    let letter = text.slice(0, end);
+    end--;
+    setLine(letter);
     if (end < 0) {
-      let index = 0
-      currentTextIndex++
+      let index = 0;
+      currentTextIndex++;
       if (currentTextIndex === texts.length) {
-        currentTextIndex = 0
+        currentTextIndex = 0;
       }
-      typing(texts[currentTextIndex], index)
-      return
+      typing(texts[currentTextIndex], index);
+      return;
     }
     setTimeout(() => {
-      reverseTyping(end, text)
-    }, 100)
+      reverseTyping(end, text);
+    }, 100);
   }
   function handleClickedSection(e) {
-    if (!e.target.id) return
-    const clickedSectionName = e.target.id
-    if (clickedSectionName == 'education' && clickedSection != 'education') {
+    if (!e.target.id) return;
+    const clickedSectionName = e.target.id;
+    if (clickedSectionName == "education" && clickedSection != "education") {
       // setClickedUni('ironhack')
-      const unis = document.querySelectorAll('.one_education')
+      const unis = document.querySelectorAll(".one_education");
       unis.forEach(uni => {
-        uni.classList.remove('active_uni')
-        if (uni.id == 'ironhack') {
-          uni.classList.add('active_uni')
+        uni.classList.remove("active_uni");
+        if (uni.id == "ironhack") {
+          uni.classList.add("active_uni");
         }
-      })
+      });
     }
-    setClickedSection(clickedSectionName)
+    setClickedSection(clickedSectionName);
   }
 
   return (
@@ -102,6 +102,7 @@ export default function Home() {
         <a
           href="https://github.com/belke05"
           target="_blank"
+          rel="noopener noreferrer"
           className="contact-icon"
         >
           <i className="fab fa-github top_git" aria-hidden="true"></i>
@@ -109,6 +110,7 @@ export default function Home() {
         <a
           href="https://www.linkedin.com/in/henri-de-bel/"
           target="_blank"
+          rel="noopener noreferrer"
           className="contact-icon"
         >
           <i className="fab fa-linkedin top_linkd" aria-hidden="true"></i>
@@ -116,6 +118,7 @@ export default function Home() {
         <a
           href="https://medium.com/@belke05"
           target="_blank"
+          rel="noopener noreferrer"
           className="contact-icon"
         >
           <i className="fab fa-medium top_linkd" aria-hidden="true"></i>
@@ -123,6 +126,7 @@ export default function Home() {
         <a
           href="https://www.codewars.com/users/belke05"
           target="_blank"
+          rel="noopener noreferrer"
           rel="noopener noreferrer"
           className="codewars"
         >
@@ -139,17 +143,17 @@ export default function Home() {
         </a>
       </div>
       <div className="information grid-information">
-        {clickedSection == 'education' && (
+        {clickedSection == "education" && (
           <Education className="information_section" />
         )}
-        {clickedSection == 'experience' && (
+        {clickedSection == "experience" && (
           <Experience className="information_section" />
         )}
-        {clickedSection == 'skills' && (
+        {clickedSection == "skills" && (
           <Skills className="information_section" />
         )}
       </div>
       <Particles className="particle_wrapper" params={particlesOptions} />
     </div>
-  )
+  );
 }

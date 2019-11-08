@@ -7,6 +7,13 @@ import educationInfo from "../../assets/educationInfo";
 
 export default function Education() {
   const [clickedUni, setClickedUni] = useState("ironhack");
+
+  function jumpToProjects() {
+    const portfolio = document.querySelector(".portfolio-wrapper");
+    const top_portfolio = portfolio.offsetTop;
+    window.scrollTo({ top: top_portfolio, behavior: "smooth" });
+  }
+
   function changeInfoDisplay(e) {
     if (!e.target.id) return;
     const clickedUni = e.target.id;
@@ -59,7 +66,15 @@ export default function Education() {
         </div>
       </div>
       <div className="specifics">
-        <p className="specifics_text">{educationInfo[clickedUni].text}</p>
+        <p className="specifics_text">
+          {educationInfo[clickedUni].text}
+          {clickedUni === "ironhack" && (
+            <button className="project-btn" onClick={jumpToProjects}>
+              {" "}
+              projects
+            </button>
+          )}
+        </p>
         {educationInfo[clickedUni].technologies && (
           <span className="technologies_span">
             <h2>Technologies implemented</h2>
@@ -68,6 +83,7 @@ export default function Education() {
                 if (clickedUni === "jedha") {
                   return (
                     <img
+                      alt="logo"
                       key={i}
                       className="technology_image"
                       src={technology.file}
