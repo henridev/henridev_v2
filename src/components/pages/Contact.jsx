@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Particles from "react-particles-js";
-// import api from "../../api";
 import particlesOptions from "../../assets/particlesjs_portfolio.json";
 
 export default function Contact() {
@@ -10,17 +9,19 @@ export default function Contact() {
     content: "",
     subject: ""
   });
+  const [mailSent, setMailSent] = useState(false);
+  function handleEmail(e) {
     e.preventDefault();
     fetch("/.netlify/functions/sendmail", {
       method: "POST",
-      body: mailInfo
+      body: JSON.stringify(mailInfo)
     })
       .then(response => {
         console.log(response);
-        return response.json();
+        return "email sent";
       })
-      .then(json => this.setState({ loading: false, msg: json.msg }));
-  };
+      .then(res => setMailSent(!mailSent));
+  }
 
   function handleMailChange(e) {
     console.log("here");
@@ -29,18 +30,6 @@ export default function Contact() {
     console.log(value, name);
     setmailInfo({ ...mailInfo, [name]: value });
   }
-
-  // function hanldeMailDelivery(e) {
-  //   e.preventDefault();
-  //   api
-  //     .sendmail(mailInfo)
-  //     .then(res => {
-  //       console.log("succesful in sending mail", res);
-  //     })
-  //     .catch(err => {
-  //       console.log("something went wrong sending the email", err);
-  //     });
-  // }
 
   return (
     <div className="contact_page">
@@ -89,7 +78,7 @@ export default function Contact() {
               id="submit"
               type="submit"
               value="SEND"
-              // onClick={hanldeMailDelivery}
+              onClick={handleEmail}
               style={{ backgroundColor: "#fac508", borderColor: "#fac508" }}
             >
               <div class="button">
@@ -134,6 +123,7 @@ export default function Contact() {
                 <a
                   href="https://github.com/belke05"
                   target="_blank"
+                  rel="noopener noreferrer"
                   class="contact-icon"
                 >
                   <i className="fab fa-github" aria-hidden="true"></i>
@@ -143,6 +133,7 @@ export default function Contact() {
                 <a
                   href="https://www.linkedin.com/in/henri-de-bel/"
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="contact-icon"
                 >
                   <i className="fab fa-linkedin" aria-hidden="true"></i>
@@ -151,7 +142,9 @@ export default function Contact() {
             </ul>
             <hr />
 
-            <div class="copyright">&copy; made with &#x1F49B; by Henri</div>
+            <div className="copyright">
+              &copy; made with <span role="img">&#x1F49B;</span> by Henri
+            </div>
           </div>
         </div>
       </section>
