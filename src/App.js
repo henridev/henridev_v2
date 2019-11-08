@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import logo from "./logo.svg";
-import "./App.css";
+import Home from "./components/pages/Home";
+import Portfolio from "./components/pages/Portfolio";
+import Scrollbar from "./components/sub-components/Scrollbar";
 import Contact from "./components/pages/Contact";
 
 class LambdaDemo extends Component {
@@ -11,7 +12,6 @@ class LambdaDemo extends Component {
 
   handleClick = api => e => {
     e.preventDefault();
-
     this.setState({ loading: true });
     fetch("/.netlify/functions/" + api)
       .then(response => {
@@ -55,14 +55,11 @@ class LambdaDemo extends Component {
 export default function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <LambdaDemo />
-      </header>
+      <Scrollbar />
+      <Home />
+      <Portfolio />
       <Contact />
+      {/* <LambdaDemo /> */}
     </div>
   );
 }
