@@ -94,8 +94,8 @@ export default function Home() {
         <li className="learn_more_item" id="experience">
           experience
         </li>
-        <li className="learn_more_item" id="goals">
-          goals
+        <li className="learn_more_item" id="descriptions">
+          project-descriptions
         </li>
       </ul>
       <div className="links grid-links">

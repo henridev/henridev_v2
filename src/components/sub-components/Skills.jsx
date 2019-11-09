@@ -1,36 +1,40 @@
-import React from 'react'
-import { Card, Button } from 'react-bootstrap'
+import React from "react";
+import { Card, Button } from "react-bootstrap";
 
 export default function Skills({ children }) {
   return (
     <div className="skills_grid">
-      <Card style={{ width: '18rem' }} className="skill_item">
+      <Card style={{ width: "18rem" }} className="skill_item">
         <Card.Img src={null} />
         <Card.Body>
           <Card.Title>DataScience</Card.Title>
           <Card.Text>
-            As a primary language i'm using Python. The primary packages i use
-            in combination with python are Pandas, Numpy and MatplotLib.
+            Focus on combining the power of Python and python packages such as
+            Matplotlib, numpy and pandas to crack datascience cases.
           </Card.Text>
-          <Button variant="secondary">&#x1F9EE; &#x1F40D;</Button>
+          <Button variant="secondary">
+            <span role="img" aria-label="datascience-icons">
+              &#x1F9EE; &#x1F40D;
+            </span>
+          </Button>
         </Card.Body>
       </Card>
-      <Card style={{ width: '18rem' }} className="skill_item">
+      <Card style={{ width: "18rem" }} className="skill_item">
         <Card.Img src={null} />
         <Card.Body>
           <Card.Title>Web-Development</Card.Title>
           <Card.Text>
-            Proficient in JavaScript using the following packages mainly:
-            express, mongoose. As a front-end framework I prefer using react but
-            I'm currently delving into Vue.js too. Used to the rest api but also
-            familiar with Graphql.
+            Currently focused on the MERN stack, while in the meantime exploring
+            new technologies like Graphql, Vue.js and firebase.
           </Card.Text>
           <Button variant="secondary">
-            &#x1F468;&#x200D;&#x1F4BB; &#x1F30D;
+            <span role="img" aria-label="web-dev-icons">
+              &#x1F468;&#x200D;&#x1F4BB; &#x1F30D;
+            </span>
           </Button>
         </Card.Body>
       </Card>
-      <Card style={{ width: '18rem' }} className="skill_item">
+      <Card style={{ width: "18rem" }} className="skill_item">
         <Card.Img src={null} />
         <Card.Body>
           <Card.Title>Business Analysis</Card.Title>
@@ -40,9 +44,13 @@ export default function Skills({ children }) {
             some code it is translating business needs into working and
             maintainable solutions.
           </Card.Text>
-          <Button variant="secondary">&#x1F91D; &#x1F4C8;</Button>
+          <Button variant="secondary">
+            <span role="img" aria-label="ba-icons">
+              &#x1F9EE; &#x1F40D;&#x1F91D; &#x1F4C8;
+            </span>
+          </Button>
         </Card.Body>
       </Card>
     </div>
-  )
+  );
 }
