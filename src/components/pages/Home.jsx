@@ -5,6 +5,7 @@ import Experience from "../sub-components/Experience";
 import Skills from "../sub-components/Skills";
 import particlesOptions from "../../assets/particlesjs_portfolio.json";
 import Particles from "react-particles-js";
+import Projects from "../sub-components/Projects";
 
 export default function Home() {
   let cleanTyping = false;
@@ -15,7 +16,8 @@ export default function Home() {
   const [line, setLine] = useState("");
   const [texts, setTexts] = useState([
     "Hello there henri here",
-    "welcome to my site!"
+    "welcome to my site!",
+    "i'm a webdev and datawrangler"
   ]);
   useEffect(() => {
     let index = 0;
@@ -32,7 +34,7 @@ export default function Home() {
     setLine(letter);
     if (text.length === index - 1) {
       let end = text.length;
-      if (count > 30) return;
+      if (count > 50) return;
       setTimeout(() => {
         reverseTyping(end, text);
       }, 500);
@@ -62,12 +64,12 @@ export default function Home() {
   function handleClickedSection(e) {
     if (!e.target.id) return;
     const clickedSectionName = e.target.id;
-    if (clickedSectionName == "education" && clickedSection != "education") {
+    if (clickedSectionName === "education" && clickedSection != "education") {
       // setClickedUni('ironhack')
       const unis = document.querySelectorAll(".one_education");
       unis.forEach(uni => {
         uni.classList.remove("active_uni");
-        if (uni.id == "ironhack") {
+        if (uni.id === "ironhack") {
           uni.classList.add("active_uni");
         }
       });
@@ -80,10 +82,10 @@ export default function Home() {
       <div className="welcome-msg grid-intro">
         <span className="lineOne">{line}</span>
       </div>
-      <div className="short_description grid-description">
+      {/* <div className="short_description grid-description">
         Fullstack webdev {`&&`} <br />
         datawrangler
-      </div>
+      </div> */}
       <ul className="learn_more grid-navigate" onClick={handleClickedSection}>
         <li className="learn_more_item" id="education">
           education
@@ -94,8 +96,8 @@ export default function Home() {
         <li className="learn_more_item" id="experience">
           experience
         </li>
-        <li className="learn_more_item" id="descriptions">
-          project-descriptions
+        <li className="learn_more_item" id="projects">
+          projects
         </li>
       </ul>
       <div className="links grid-links">
@@ -127,7 +129,6 @@ export default function Home() {
           href="https://www.codewars.com/users/belke05"
           target="_blank"
           rel="noopener noreferrer"
-          rel="noopener noreferrer"
           className="codewars"
         >
           <img
@@ -143,14 +144,17 @@ export default function Home() {
         </a>
       </div>
       <div className="information grid-information">
-        {clickedSection == "education" && (
+        {clickedSection === "education" && (
           <Education className="information_section" />
         )}
-        {clickedSection == "experience" && (
+        {clickedSection === "experience" && (
           <Experience className="information_section" />
         )}
-        {clickedSection == "skills" && (
+        {clickedSection === "skills" && (
           <Skills className="information_section" />
+        )}
+        {clickedSection === "projects" && (
+          <Projects className="information_section" />
         )}
       </div>
       <Particles className="particle_wrapper" params={particlesOptions} />

@@ -1,33 +1,33 @@
-import React from 'react'
-import { useState } from 'react'
-import Particles from 'react-particles-js'
+import React from "react";
+import { useState } from "react";
+import Particles from "react-particles-js";
 
-import particlesOptions from '../../assets/particlesjs_portfolio.json'
-import projectInfo from '../../assets/projectInfo.js'
+import particlesOptions from "../../assets/particlesjs_portfolio.json";
+import projectInfo from "../../assets/projectInfo.js";
 
 export default function Portfolio() {
-  const projectsNames = ['maptee', 'jab', 'war_stars']
-  const [webPortfolio, setWebPortfolio] = useState(true)
-  const [selectedProjectIndex, setSelectedProjectIndex] = useState(0)
+  const projectsNames = ["maptee", "jab", "war_stars"];
+  const [webPortfolio, setWebPortfolio] = useState(true);
+  const [selectedProjectIndex, setSelectedProjectIndex] = useState(0);
 
   function handleCheck(e) {
-    console.log(e.target)
-    setWebPortfolio(!webPortfolio)
+    console.log(e.target);
+    setWebPortfolio(!webPortfolio);
   }
 
   function handleProjectChange(e) {
-    if (!e.target.className) return
-    const arrow = e.target.className
-    if (arrow == 'arrowback' && selectedProjectIndex === 0) {
-      return setSelectedProjectIndex(2)
+    if (!e.target.className) return;
+    const arrow = e.target.className;
+    if (arrow === "arrowback" && selectedProjectIndex === 0) {
+      return setSelectedProjectIndex(2);
     }
-    if (arrow == 'arrowforward' && selectedProjectIndex === 2) {
-      return setSelectedProjectIndex(0)
+    if (arrow === "arrowforward" && selectedProjectIndex === 2) {
+      return setSelectedProjectIndex(0);
     }
-    if (arrow == 'arrowback' && selectedProjectIndex > 0) {
-      setSelectedProjectIndex(selectedProjectIndex - 1)
-    } else if (arrow == 'arrowforward' && selectedProjectIndex < 2) {
-      setSelectedProjectIndex(selectedProjectIndex + 1)
+    if (arrow === "arrowback" && selectedProjectIndex > 0) {
+      setSelectedProjectIndex(selectedProjectIndex - 1);
+    } else if (arrow === "arrowforward" && selectedProjectIndex < 2) {
+      setSelectedProjectIndex(selectedProjectIndex + 1);
     }
   }
 
@@ -51,7 +51,7 @@ export default function Portfolio() {
               <div
                 className="project_img_wrapper"
                 style={{
-                  backgroundImage: `url(${projectInfo[projectsNames[selectedProjectIndex]].icon})`,
+                  backgroundImage: `url(${projectInfo[projectsNames[selectedProjectIndex]].icon})`
                 }}
               >
                 <a
@@ -101,5 +101,5 @@ export default function Portfolio() {
         {!webPortfolio && <div className="data-wrapper"></div>}
       </div>
     </div>
-  )
+  );
 }

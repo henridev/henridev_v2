@@ -158,3 +158,18 @@
   border-radius: 5%;
   margin-left: 1%;
 }
+
+// from here projects section
+.project-front,
+.project-back {
+  position: absolute;
+  width: 100%;
+}
+
+.project-flip {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-position-y: center;
+  background-position-x: center;
+}
