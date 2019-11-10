@@ -1,38 +1,38 @@
-import React, { Component } from "react";
-import Home from "./components/pages/Home";
-import Portfolio from "./components/pages/Portfolio";
-import Scrollbar from "./components/sub-components/Scrollbar";
-import Contact from "./components/pages/Contact";
+import React, { Component } from "react"
+import Home from "./components/pages/Home"
+import Portfolio from "./components/pages/Portfolio"
+import Scrollbar from "./components/sub-components/Scrollbar"
+import Contact from "./components/pages/Contact"
 
 class LambdaDemo extends Component {
   constructor(props) {
-    super(props);
-    this.state = { loading: false, msg: null };
+    super(props)
+    this.state = { loading: false, msg: null }
   }
 
   handleClick = api => e => {
-    e.preventDefault();
-    this.setState({ loading: true });
+    e.preventDefault()
+    this.setState({ loading: true })
     fetch("/.netlify/functions/" + api)
       .then(response => {
-        console.log(response);
-        return response.json();
+        console.log(response)
+        return response.json()
       })
-      .then(json => this.setState({ loading: false, msg: json.msg }));
-  };
+      .then(json => this.setState({ loading: false, msg: json.msg }))
+  }
 
   handleEmail = api => e => {
-    e.preventDefault();
+    e.preventDefault()
     fetch("/.netlify/functions/" + api)
       .then(response => {
-        console.log(response);
-        return response.json();
+        console.log(response)
+        return response.json()
       })
-      .then(json => this.setState({ loading: false, msg: json.msg }));
-  };
+      .then(json => this.setState({ loading: false, msg: json.msg }))
+  }
 
   render() {
-    const { loading, msg } = this.state;
+    const { loading, msg } = this.state
 
     return (
       <p>
@@ -48,7 +48,7 @@ class LambdaDemo extends Component {
         <br />
         <span>{msg}</span>
       </p>
-    );
+    )
   }
 }
 
@@ -61,5 +61,5 @@ export default function App() {
       <Contact />
       {/* <LambdaDemo /> */}
     </div>
-  );
+  )
 }

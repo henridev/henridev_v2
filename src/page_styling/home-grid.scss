@@ -77,12 +77,13 @@
 .grid-information {
   grid-area: information;
   align-self: flex-start;
+  height: 100%;
+  width: 100%;
 }
 
 .information {
   display: flex;
   flex-direction: column;
-  padding-top: 5%;
   position: relative;
 }
 

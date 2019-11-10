@@ -164,6 +164,10 @@
 .project-back {
   position: absolute;
   width: 100%;
+  height: 90%;
+}
+.project-front {
+  background-color: #1c2934;
 }
 
 .project-flip {
@@ -172,4 +176,50 @@
   background-position: center;
   background-position-y: center;
   background-position-x: center;
+  width: 33%;
+  height: 30%;
+  margin: 3%;
+  background-color: #3a3b3d;
+  border: 2px solid #f3bf08;
+}
+
+.project-flip:hover {
+  background-color: #232325;
+  border-color: #f3bf08;
+}
+
+.project-buttons {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.education-wrapper {
+  padding-top: 4%;
+}
+
+.card-flip-wrapper {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-info,
+.return_icon {
+  color: #fac508;
+  text-align: center;
+  font-size: 2rem;
+}
+
+.project-flip-back {
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+}
+
+.highlight_technology {
+  color: #fac508;
 }

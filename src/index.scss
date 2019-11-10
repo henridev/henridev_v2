@@ -115,7 +115,7 @@ bootstrap-link:focus {
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 600px) {
   html {
     font-size: 10px;
   }
@@ -192,5 +192,9 @@ bootstrap-link:focus {
   }
   .section-header {
     margin-bottom: 0px;
+  }
+
+  .project-flip-back {
+    font-size: 1.3rem;
   }
 }

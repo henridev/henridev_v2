@@ -29,7 +29,7 @@ export default function Education() {
   }
 
   return (
-    <span>
+    <div className="education-wrapper">
       <div className="timeline">
         <div className="years">
           <span className="one_year">2015-2018</span>
@@ -99,6 +99,6 @@ export default function Education() {
           </span>
         )}
       </div>
-    </span>
+    </div>
   );
 }
