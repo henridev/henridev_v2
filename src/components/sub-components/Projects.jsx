@@ -77,7 +77,7 @@ export default function Projects() {
         style={{
           opacity: opacity,
           transform: transform.interpolate(t => `${t} rotateY(180deg)`),
-          backgroundColor: "#3a3b3d",
+          backgroundColor: "transparent",
           zIndex: zIndex.interpolate(z => -1 * z)
         }}
         className="skill_item project-back"
