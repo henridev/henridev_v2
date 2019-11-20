@@ -4,6 +4,7 @@ import Particles from "react-particles-js";
 import particlesOptions from "../../assets/particlesjs_portfolio.json";
 import projectInfo from "../../assets/projectInfo.js";
 import Switch from "../sub-components/Switch";
+import Gist from "react-gist";
 
 export default function Portfolio() {
   const projectsNames = ["maptee", "jab", "war_stars"];
@@ -92,6 +93,7 @@ export default function Portfolio() {
         )}
         {!webPortfolio && (
           <div className="data-wrapper">
+            <Gist id={`5a675c3161d8e4e69551270439b4bea5`}></Gist>
             <script src="https://gist.github.com/belke05/5a675c3161d8e4e69551270439b4bea5.js"></script>
           </div>
         )}
