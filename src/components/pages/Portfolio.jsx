@@ -35,7 +35,7 @@ export default function Portfolio() {
     <div className="portfolio-wrapper">
       <Particles className="particle_wrapper2" params={particlesOptions} />
       <div className="portfolio_grid_wrapper">
-        {/* <div className="toggle grid_item">
+        <div className="toggle grid_item">
           <input
             className="checkbox"
             type="checkbox"
@@ -44,14 +44,16 @@ export default function Portfolio() {
             onClick={handleCheck}
           />
           <label htmlFor="checkbox">toggle to see datascience projects</label>
-        </div> */}
+        </div>
         {webPortfolio && (
           <div className="web-wrapper grid_item web_wrapper_grid">
             <div className="grid_project project_logo">
               <div
                 className="project_img_wrapper"
                 style={{
-                  backgroundImage: `url(${projectInfo[projectsNames[selectedProjectIndex]].icon})`
+                  backgroundImage: `url(${
+                    projectInfo[projectsNames[selectedProjectIndex]].icon
+                  })`
                 }}
               >
                 <a

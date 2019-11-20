@@ -22,7 +22,7 @@ const educationInformation = {
   },
   ironhack: {
     text:
-      " At Ironhack I followed a 9 week intensive webdevelopment bootcamp. The bootcamp is split up in 3 modules. The first module focused on HTML, CSS and JS afterward we focused on express, node and mongoose and handlebars as a view engine. In the last module we learned react and in the end we developed a fullstack application build on a MERN stack. After each module there was a project to complete, to learn more about those click on the projects button",
+      " At Ironhack I followed a 9 week intensive webdevelopment bootcamp. The bootcamp is split up in 3 modules. The first module focused on HTML, CSS and JS afterward we focused on express, node and mongoose and handlebars as a view engine. In the last module we learned react and in the end we developed a fullstack application build on a MERN stack. After each module there was a project to complete, to learn more about those click ",
     technologies: [
       { name: "javascript", file: javascript },
       { name: "mongoose", file: mongoose },

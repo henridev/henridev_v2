@@ -70,8 +70,7 @@ export default function Education() {
           {educationInfo[clickedUni].text}
           {clickedUni === "ironhack" && (
             <button className="project-btn" onClick={jumpToProjects}>
-              {" "}
-              projects
+              here
             </button>
           )}
         </p>

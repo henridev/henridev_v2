@@ -31,6 +31,6 @@ exports.handler = function(event, context, callback) {
     })
     .catch(err => {
       callback(err);
-      console.log("error while sending message", err);
+      console.error("error while sending message", err);
     });
 };
