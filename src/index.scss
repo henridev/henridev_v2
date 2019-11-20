@@ -19,7 +19,7 @@ $yellow: #fac508;
 @import url("https://fonts.googleapis.com/css?family=Be+Vietnam|Roboto&display=swap");
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
 @import "./page_styling/home.scss";
-@import "./page_styling/about.scss";
+@import "./page_styling/switch.scss";
 @import "./page_styling/portfolio.scss";
 @import "./page_styling/scrollbar.scss";
 @import "./page_styling/contact.scss";
@@ -156,6 +156,7 @@ bootstrap-link:focus {
   }
   .portfolio_grid_wrapper {
     margin-right: 17%;
+    margin-top: 35vh;
   }
   .contact_page {
     overflow: hidden;

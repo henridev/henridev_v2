@@ -1,0 +1,47 @@
+.switch_wrapper {
+  display: flex;
+  justify-self: flex-start;
+}
+
+.switch_checkbox {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
+
+.switch_label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  width: 80px;
+  height: 20px;
+  background: $yellow;
+  border-radius: 100px;
+  position: relative;
+  -webkit-transition: background-color 0.2s;
+  transition: background-color 0.2s;
+}
+
+.switch_label .react_switch_btn {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 15px;
+  height: 15px;
+  border-radius: 45px;
+  -webkit-transition: 0.2s;
+  transition: 0.1s;
+  background: #fff;
+  box-shadow: 0 0 2px 0 rgba(10, 10, 10, 0.29);
+}
+
+.switch_checkbox:checked + .switch_label .react_switch_btn {
+  left: calc(100% - 2px);
+  transform: translateX(-100%);
+}
+
+.switch_label:active .react_switch_btn {
+  width: 60px;
+}

@@ -1,5 +1,5 @@
 .portfolio-wrapper::before {
-  content: '';
+  content: "";
   width: 100vw;
   height: 100vh;
   position: absolute;
@@ -26,7 +26,7 @@
   width: 340px;
   height: 560px;
   border: 1px solid $one;
-  content: '';
+  content: "";
   z-index: 100;
 }
 
@@ -69,7 +69,7 @@
   margin-right: 10%;
   grid-template-rows: 5% 90%;
   z-index: 10;
-  margin-top: 35vh;
+  margin-top: 25vh;
 }
 
 .toggle {
@@ -82,8 +82,8 @@
 .web_wrapper_grid {
   display: grid;
   grid-template-areas:
-    '. . logo logo . .'
-    'arrowback proj proj proj proj arrowforward';
+    ". . logo logo . ."
+    "arrowback proj proj proj proj arrowforward";
   grid-template-rows: 1fr 8fr;
   grid-template-columns: repeat(6, 1fr);
 }
@@ -166,4 +166,18 @@
   color: $yellow;
   // text-decoration: none;
   font-weight: bold;
+}
+
+.portfolio_switch_container {
+  display: flex;
+  width: 100%;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.portfolio_switch_label {
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  margin: 0 2%;
 }

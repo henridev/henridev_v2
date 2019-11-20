@@ -1,9 +1,9 @@
 import React from "react";
 import { useState } from "react";
 import Particles from "react-particles-js";
-
 import particlesOptions from "../../assets/particlesjs_portfolio.json";
 import projectInfo from "../../assets/projectInfo.js";
+import Switch from "../sub-components/Switch";
 
 export default function Portfolio() {
   const projectsNames = ["maptee", "jab", "war_stars"];
@@ -35,38 +35,28 @@ export default function Portfolio() {
     <div className="portfolio-wrapper">
       <Particles className="particle_wrapper2" params={particlesOptions} />
       <div className="portfolio_grid_wrapper">
-        <div className="toggle grid_item">
-          <input
-            className="checkbox"
-            type="checkbox"
-            name="checkbox"
-            value={webPortfolio}
-            onClick={handleCheck}
-          />
-          <label htmlFor="checkbox">toggle to see datascience projects</label>
+        <div className="portfolio_switch_container">
+          <span className="portfolio_switch_label">Data</span>
+          <Switch checkHandler={handleCheck} checked={webPortfolio} />
+          <span className="portfolio_switch_label">Web</span>
         </div>
         {webPortfolio && (
           <div className="web-wrapper grid_item web_wrapper_grid">
             <div className="grid_project project_logo">
-              <div
-                className="project_img_wrapper"
-                style={{
-                  backgroundImage: `url(${
-                    projectInfo[projectsNames[selectedProjectIndex]].icon
-                  })`
-                }}
+              <a
+                href={projectInfo[projectsNames[selectedProjectIndex]].url}
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                <a
-                  href={projectInfo[projectsNames[selectedProjectIndex]].url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {/* <img
-                    src={projectInfo[projectsNames[selectedProjectIndex]].icon}
-                    className="project_logo_img"
-                  /> */}
-                </a>
-              </div>
+                <div
+                  className="project_img_wrapper"
+                  style={{
+                    backgroundImage: `url(${
+                      projectInfo[projectsNames[selectedProjectIndex]].icon
+                    })`
+                  }}
+                ></div>
+              </a>
             </div>
             <div className="arrowback" onClick={handleProjectChange}></div>
             <div className="grid_project project_screens">
@@ -100,7 +90,11 @@ export default function Portfolio() {
             <div className="arrowforward" onClick={handleProjectChange}></div>
           </div>
         )}
-        {!webPortfolio && <div className="data-wrapper"></div>}
+        {!webPortfolio && (
+          <div className="data-wrapper">
+            <script src="https://gist.github.com/belke05/5a675c3161d8e4e69551270439b4bea5.js"></script>
+          </div>
+        )}
       </div>
     </div>
   );
