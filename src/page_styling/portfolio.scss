@@ -80,12 +80,11 @@
 }
 
 .web_wrapper_grid {
+  justify-items: flex-start;
   display: grid;
-  grid-template-areas:
-    ". . logo logo . ."
-    "arrowback proj proj proj proj arrowforward";
-  grid-template-rows: 1fr 8fr;
+  grid-template-areas: "arrowback proj proj proj proj arrowforward";
   grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: max-content;
 }
 
 .grid_project {
@@ -93,8 +92,11 @@
 }
 
 .project_logo {
-  grid-area: logo;
-  width: 100%;
+  width: 50%;
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .project_img_wrapper {
@@ -118,7 +120,7 @@
   display: flex;
   flex-direction: column;
   justify-self: center;
-  align-self: center;
+  align-items: center;
 }
 
 .project_logo_img {

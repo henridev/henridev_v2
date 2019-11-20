@@ -43,24 +43,24 @@ export default function Portfolio() {
         </div>
         {webPortfolio && (
           <div className="web-wrapper grid_item web_wrapper_grid">
-            <div className="grid_project project_logo">
-              <a
-                href={projectInfo[projectsNames[selectedProjectIndex]].url}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <div
-                  className="project_img_wrapper"
-                  style={{
-                    backgroundImage: `url(${
-                      projectInfo[projectsNames[selectedProjectIndex]].icon
-                    })`
-                  }}
-                ></div>
-              </a>
-            </div>
             <div className="arrowback" onClick={handleProjectChange}></div>
             <div className="grid_project project_screens">
+              <div className="grid_project project_logo">
+                <a
+                  href={projectInfo[projectsNames[selectedProjectIndex]].url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <div
+                    className="project_img_wrapper"
+                    style={{
+                      backgroundImage: `url(${
+                        projectInfo[projectsNames[selectedProjectIndex]].icon
+                      })`
+                    }}
+                  ></div>
+                </a>
+              </div>
               <a
                 href={projectInfo[projectsNames[selectedProjectIndex]].url}
                 target="_blank"
